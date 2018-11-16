@@ -11,10 +11,6 @@ spring:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: test
     password: JJZ@123456
-#    url: jdbc:sqlserver://10.28.19.219:1433;databaseName=sctrans_dev
-#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#    username: dev
-#    password: dev.good
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 5

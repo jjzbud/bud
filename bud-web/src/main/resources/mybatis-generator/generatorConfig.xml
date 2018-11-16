@@ -17,8 +17,8 @@
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		  
 		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-			connectionURL="jdbc:sqlserver://10.28.19.219:1433;DatabaseName=sctrans_dev"
-			userId="dev" password="dev.good">
+			connectionURL="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=test"
+			userId="test" password="JJZ@123456">
 		</jdbcConnection>
 		
 		<!--
@@ -49,12 +49,6 @@
 		<javaClientGenerator targetPackage="com.bud.trans.cases.repository" targetProject="src\main\java" type="XMLMAPPER" />
 
 		<table domainObjectName="ToCase" tableName="T_TO_CASE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCaseComment" tableName="T_TO_CASE_COMMENT" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCaseInfo" tableName="T_TO_CASE_INFO" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCaseMerge" tableName="T_TO_CASE_MERGE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCaseMigration" tableName="T_TO_CASE_MIGRATION" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCaseToDistribute" tableName="T_TO_CASE_TO_DISTRIBUTE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
-		<table domainObjectName="ToCashFlow" tableName="T_TO_CASH_FLOW" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
 
 	</context>
 
