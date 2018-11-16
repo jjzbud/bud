@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动的jar包地址 -->
+<!-- 	 <classPathEntry location="E:\sqljdbc4.jar" 
+		/> -->
+	<classPathEntry
+			location="E:\mvnRepos\com\microsoft\sqlserver\sqljdbc41\4.1\sqljdbc41-4.1.jar"/>
+	<context id="sqlServerTables" targetRuntime="MyBatis3" defaultModelType="flat">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		  
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			connectionURL="jdbc:sqlserver://10.28.19.219:1433;DatabaseName=sctrans_dev"
+			userId="dev" password="dev.good">
+		</jdbcConnection>
+		
+		<!--
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.4.19.203:1521:xe"
+			userId="tbsp" password="tbsp">
+		</jdbcConnection>
+-->
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="com.bud.trans.cases.entity" targetProject="src\main\java">
+
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" /> 
+		</javaModelGenerator>
+
+
+		<sqlMapGenerator targetPackage="cases" targetProject="src\main\resources\mapper">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator targetPackage="com.bud.trans.cases.repository" targetProject="src\main\java" type="XMLMAPPER" />
+
+		<table domainObjectName="ToCase" tableName="T_TO_CASE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCaseComment" tableName="T_TO_CASE_COMMENT" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCaseInfo" tableName="T_TO_CASE_INFO" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCaseMerge" tableName="T_TO_CASE_MERGE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCaseMigration" tableName="T_TO_CASE_MIGRATION" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCaseToDistribute" tableName="T_TO_CASE_TO_DISTRIBUTE" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+		<table domainObjectName="ToCashFlow" tableName="T_TO_CASH_FLOW" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" schema="sctrans" selectByExampleQueryId="false" />
+
+	</context>
+
+</generatorConfiguration>  

@@ -1,0 +1,27 @@
+server:
+  port: 8089
+spring:
+  jpa:
+    database: sql_server
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=test
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: test
+    password: JJZ@123456
+#    url: jdbc:sqlserver://10.28.19.219:1433;databaseName=sctrans_dev
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    username: dev
+#    password: dev.good
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
