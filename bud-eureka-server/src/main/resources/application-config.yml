@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      uri: http://bud.com.cn:3321
+      label: master
+      name: bud-eureka-server
+      profile: dev
+#spring.cloud.config.uri：对应Config Server开放的地址
+#spring.application.name：对应文件规则的应用名
+#spring.cloud.config.profile：对应环境名
+#spring.cloud.config.label：对应分支名

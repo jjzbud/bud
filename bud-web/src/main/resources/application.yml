@@ -21,3 +21,18 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+#  rabbitmq:
+#    host: 192.168.0.6
+#    port: 5672
+#    username: admin
+#    password: 123456
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://bud.com.cn:3301/eureka/
+bud:
+  hello: hello im dev update bus edit edit

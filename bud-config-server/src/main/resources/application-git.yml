@@ -1,0 +1,53 @@
+info:
+  name: bud
+  tel: 157
+server:
+  port: 3321
+spring:
+  application:
+    name: bud-config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/jjzbud/bud
+          search-paths: config/dev
+
+#spring.cloud.config.server.default-application-name=config-server
+# 配置git仓库地址
+#spring.cloud.config.server.git.uri=https://github.com/s***w*/myspringcloudconfig
+# 配置仓库路径
+#spring.cloud.config.server.git.search-paths=myconfigpath
+# 配置仓库的分支
+#spring.cloud.config.label=master
+# 访问git仓库的用户名
+#spring.cloud.config.server.git.username=xxxxoooo
+# 访问git仓库的用户密码 如果Git仓库为公开仓库，可以不填写用户名和密码，如果是私有仓库需要填写
+#spring.cloud.config.server.git.password=xxxxoooo
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://bud.com.cn:3301/eureka/
+logging:
+  file: "target/bud-config-server.log"
+  pattern:
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+# 2.0开始，actuator默认不开放，所以要设置为开放
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+

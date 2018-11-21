@@ -1,0 +1,30 @@
+info:
+  name: bud
+  tel: 157
+server:
+  port: 3301
+spring:
+  application:
+    name: bud-eureka-server
+eureka:
+  instance:
+    hostname: bud.com.cn
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://bud.com.cn:3301/eureka/
+logging:
+  file: "target/bud-eureka-server.log"
+  pattern:
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+# 2.0开始，actuator默认不开放，所以要设置为开放
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

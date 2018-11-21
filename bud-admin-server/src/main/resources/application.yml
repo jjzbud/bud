@@ -1,0 +1,28 @@
+#spring:
+#  cloud:
+#    config:
+#      uri: http://bud.com.cn:3321
+#      label: master
+#      name: bud-admin-server
+#      profile: dev
+#spring.cloud.config.uri：对应Config Server开放的地址
+#spring.application.name：对应文件规则的应用名
+#spring.cloud.config.profile：对应环境名
+#spring.cloud.config.label：对应分支名
+
+#通过eureka的配置方式
+#spring.cloud.config.discovery.enabled ：开启Config服务发现支持
+#spring.cloud.config.discovery.serviceId ：指定server端的name,也就是server端spring.application.name的值
+#eureka.client.serviceUrl.defaultZone ：指向配置中心的地址
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: bud-config-server
+      label: master
+      name: bud-admin-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://bud.com.cn:3301/eureka/

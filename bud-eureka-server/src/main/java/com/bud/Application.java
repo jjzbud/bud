@@ -2,7 +2,7 @@ package com.bud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * 描述:
@@ -10,7 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Author jiejz1
  * @Create 2018-07-26
  */
-@EnableDiscoveryClient
+
+@EnableEurekaServer
 @SpringBootApplication
 public class Application {
 

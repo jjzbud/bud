@@ -3,6 +3,7 @@ package com.bud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * 描述:
@@ -10,12 +11,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Author jiejz1
  * @Create 2018-07-26
  */
+@EnableConfigServer
 @EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
