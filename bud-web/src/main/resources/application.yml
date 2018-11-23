@@ -1,6 +1,8 @@
 server:
   port: 8089
 spring:
+  application:
+    name: bud-web
   jpa:
     database: sql_server
     show-sql: true
